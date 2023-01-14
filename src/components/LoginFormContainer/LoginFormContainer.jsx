@@ -104,9 +104,11 @@ function LoginFormContainer() {
 					textTransform: "none",
 				}}>
 				Login
-      </Button>
-      
-      
+			</Button>
+
+			<div className='signup_link-container'>
+				Don't have an account? <span className='signup'>Sign Up</span>
+			</div>
 		</div>
 	);
 }
