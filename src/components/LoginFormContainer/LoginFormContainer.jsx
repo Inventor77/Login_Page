@@ -7,6 +7,7 @@ import {
 	IconButton,
 	OutlinedInput,
 	TextField,
+	Typography,
 } from "@mui/material";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -18,27 +19,41 @@ function LoginFormContainer() {
 
 	return (
 		<div className='login_form-container'>
-			<div style={{marginBottom: "28px"}}>
-        <InputLabel
+			<Typography
+				variant='h1'
+				gutterBottom
+				sx={{
+					color: "#181818",
+					fontSize: "24px",
+					fontWeight: "700",
+					marginBottom: "42px",
+				}}>
+				Login to your Docsumo account
+			</Typography>
+			<div style={{ marginBottom: "28px" }}>
+				<InputLabel
 					htmlFor='textarea'
 					sx={{
-						marginBottom: "12px",
+						marginBottom: "6px",
 						fontSize: "14px",
 						color: "rgba(24,24,24,.8)",
 					}}>
 					Work Email
 				</InputLabel>
 				<FormControl sx={{ width: "100%" }} variant='outlined'>
-          <TextField
-            type="email"
-            id='textarea' placeholder='janedoe@abc.com' size='small' />
+					<TextField
+						type='email'
+						id='textarea'
+						placeholder='janedoe@abc.com'
+						size='small'
+					/>
 				</FormControl>
 			</div>
 			<div>
 				<InputLabel
 					htmlFor='password'
 					sx={{
-						marginBottom: "12px",
+						marginBottom: "6px",
 						fontSize: "14px",
 						color: "rgba(24,24,24,.8)",
 					}}>
