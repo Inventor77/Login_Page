@@ -62,6 +62,7 @@ function LoginFormContainer() {
 				<FormControl sx={{ width: "100%" }} variant='outlined' size='small'>
 					<OutlinedInput
 						id='password'
+						placeholder='Enter password here...'
 						type={showPassword ? "text" : "password"}
 						endAdornment={
 							<InputAdornment position='end'>
