@@ -3,7 +3,7 @@ import './Login.scss'
 
 function Login() {
     return (
-        <div>
+        <div className="login_page">
         
         </div>
     );
