@@ -89,6 +89,24 @@ function LoginFormContainer() {
 			<div className='forgot_password-container'>
 				<span className='forgot_password'>Forgot Password?</span>
 			</div>
+
+			<Button
+				variant='contained'
+				sx={{
+					marginTop: "32px",
+					width: "100%",
+					height: "48px",
+					padding: "14px 15px",
+					borderRadius: "4px",
+					justifyContent: "center",
+					font: "normal normal 16px/1.25 Lato,sans-serif",
+					boxShadow: "0 2px 4px rgb(0 0 0 / 10%)",
+					textTransform: "none",
+				}}>
+				Login
+      </Button>
+      
+      
 		</div>
 	);
 }
