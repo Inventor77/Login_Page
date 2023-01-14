@@ -6,16 +6,19 @@
 	background-size: cover;
 
 	.login_page-container {
+        position: relative;
 		display: flex;
 		position: relative;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: center;
         flex-direction: column;
 		margin: 0 auto;
 		max-width: 1272px;
 		min-height: 100%;
 
         .logo-container {
+            position: absolute;
+            top: 0;
             width: 100%;
         }
 	}
