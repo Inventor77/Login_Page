@@ -66,11 +66,18 @@ function LoginFormContainer() {
 						type={showPassword ? "text" : "password"}
 						endAdornment={
 							<InputAdornment position='end'>
-								<IconButton onClick={handleClickShowPassword} edge='end'>
+								<IconButton
+									size='small'
+									onClick={handleClickShowPassword}
+									edge='end'>
 									{showPassword ? (
-										<VisibilityOutlinedIcon />
+										<VisibilityOutlinedIcon
+											sx={{ fontSize: "21px", color: "#000" }}
+										/>
 									) : (
-										<VisibilityOffOutlinedIcon />
+										<VisibilityOffOutlinedIcon
+											sx={{ fontSize: "21px", color: "#000" }}
+										/>
 									)}
 								</IconButton>
 							</InputAdornment>
@@ -78,6 +85,7 @@ function LoginFormContainer() {
 					/>
 				</FormControl>
 			</div>
+			<div></div>
 		</div>
 	);
 }
