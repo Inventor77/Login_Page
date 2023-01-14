@@ -1,27 +1,47 @@
 .login_form-container {
-    width: 548px;
-    height: 487px;
-    border-radius: 8px;
-    padding: 54px 64px 48px;
-    background-color: #fff;
-    box-shadow: 0 4px 18px rgb(0 0 0 / 25%);
+	width: 548px;
+	height: 487px;
+	border-radius: 8px;
+	padding: 54px 64px 48px;
+	background-color: #fff;
+	box-shadow: 0 4px 18px rgb(0 0 0 / 25%);
 }
 
-.forgot_password-container{
-display: flex;
-align-content: center;
-justify-content: flex-end;
-.forgot_password {
-    color: #000;
-    margin-top: 8px;
-    font-size: 14px;
-    line-height: 1.7;
-    display: inline-block;
-    text-decoration: none;
-    cursor: pointer;
-    &:hover {
-    color: #344bfc;
-    text-decoration: underline;
-    }
+.forgot_password-container {
+	display: flex;
+	align-content: center;
+	justify-content: flex-end;
+	.forgot_password {
+		color: #000;
+		margin-top: 8px;
+		font-size: 14px;
+		line-height: 1.7;
+		display: inline-block;
+		text-decoration: none;
+		cursor: pointer;
+		&:hover {
+			color: #344bfc;
+			text-decoration: underline;
+		}
+	}
 }
+
+.signup_link-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: nowrap;
+	gap: 7px;
+	color: #414141;
+	margin-top: 16px;
+	text-align: center;
+	font: normal normal 18px Lato, sans-serif;
+	.signup {
+		color: #4d61fc;
+		font-weight: 600;
+		cursor: pointer;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
