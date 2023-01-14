@@ -9,8 +9,8 @@ import {
 	TextField,
 	Typography,
 } from "@mui/material";
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 function LoginFormContainer() {
 	const [showPassword, setShowPassword] = useState(false);
@@ -66,7 +66,11 @@ function LoginFormContainer() {
 						endAdornment={
 							<InputAdornment position='end'>
 								<IconButton onClick={handleClickShowPassword} edge='end'>
-									{showPassword ? <VisibilityOff /> : <Visibility />}
+									{showPassword ? (
+										<VisibilityOutlinedIcon />
+									) : (
+										<VisibilityOffOutlinedIcon />
+									)}
 								</IconButton>
 							</InputAdornment>
 						}
