@@ -8,6 +8,7 @@ import {
 	OutlinedInput,
 	TextField,
 	Typography,
+	Button,
 } from "@mui/material";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
@@ -85,7 +86,9 @@ function LoginFormContainer() {
 					/>
 				</FormControl>
 			</div>
-			<div></div>
+			<div className='forgot_password-container'>
+				<span className='forgot_password'>Forgot Password?</span>
+			</div>
 		</div>
 	);
 }
