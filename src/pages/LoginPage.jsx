@@ -1,8 +1,8 @@
 import React from "react";
 import Login from "../layouts/Login/Login";
 
-function loginPage() {
+function LoginPage() {
 	return <Login />;
 }
 
-export default loginPage;
+export default LoginPage;
