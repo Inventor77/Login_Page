@@ -34,7 +34,7 @@ function LoginFormContainer() {
 				<InputLabel
 					htmlFor='textarea'
 					sx={{
-						marginBottom: "6px",
+						marginBottom: "12px",
 						fontSize: "14px",
 						color: "rgba(24,24,24,.8)",
 					}}>
