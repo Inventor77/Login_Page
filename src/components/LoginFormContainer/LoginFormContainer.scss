@@ -45,3 +45,16 @@
 		}
 	}
 }
+
+.error_message-container {
+	min-height: 28px;
+	margin-bottom: 7px;
+	padding: 7px 12px;
+	font: normal normal 12px/1.16 Lato, sans-serif;
+	&.error_message {
+		color: #c70011;
+		border: 1px solid #c70011;
+		background: #fff2f2;
+		border-radius: 4px;
+	}
+}

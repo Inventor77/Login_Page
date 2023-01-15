@@ -14,30 +14,44 @@ import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 function LoginFormContainer() {
-	const [email, SetEmail] = useState();
-	const [password, setPassword] = useState();
+	const [email, SetEmail] = useState("");
+	const [password, setPassword] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
 	const [response, setResponse] = useState(null);
 
 	const handleClickShowPassword = () => setShowPassword((show) => !show);
 
 	const handleSubmit = async () => {
+		console.log(
+			JSON.stringify(
+				{
+					email: email,
+					password: password,
+				},
+				null,
+				2
+			)
+		);
 		try {
 			const res = await fetch(
 				"https://apptesting.docsumo.com/api/v1/eevee/login/",
 				{
 					method: "POST",
-					body: {
-						email: email,
-						password: password,
-					},
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(
+						{
+							email: email,
+							password: password,
+						},
+						null,
+						2
+					),
 				}
 			);
 			const data = await res.json();
-			await setResponse(data);
-			await console.log(data);
-		} catch (error) {
-			console.log(error);
+			setResponse(data);
+		} catch (err) {
+			console.log("Error while logging in: ", err);
 		}
 	};
 
@@ -50,10 +64,18 @@ function LoginFormContainer() {
 					color: "#181818",
 					fontSize: "24px",
 					fontWeight: "700",
-					marginBottom: "42px",
+					marginBottom: "7px",
 				}}>
 				Login to your Docsumo account
 			</Typography>
+			<div
+				className={
+					response?.error
+						? "error_message-container error_message"
+						: "error_message-container"
+				}>
+				{response?.error ? response?.error : ""}
+			</div>
 			<div style={{ marginBottom: "28px" }}>
 				<InputLabel
 					htmlFor='textarea'
