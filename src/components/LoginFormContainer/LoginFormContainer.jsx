@@ -9,6 +9,7 @@ import {
 	TextField,
 	Typography,
 	Button,
+	CircularProgress,
 } from "@mui/material";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
@@ -18,20 +19,12 @@ function LoginFormContainer() {
 	const [password, setPassword] = useState("");
 	const [showPassword, setShowPassword] = useState(false);
 	const [response, setResponse] = useState(null);
+	const [loading, setLoading] = useState(false);
 
 	const handleClickShowPassword = () => setShowPassword((show) => !show);
 
 	const handleSubmit = async () => {
-		console.log(
-			JSON.stringify(
-				{
-					email: email,
-					password: password,
-				},
-				null,
-				2
-			)
-		);
+		setLoading(true);
 		try {
 			const res = await fetch(
 				"https://apptesting.docsumo.com/api/v1/eevee/login/",
@@ -50,8 +43,10 @@ function LoginFormContainer() {
 			);
 			const data = await res.json();
 			setResponse(data);
+			setLoading(false);
 		} catch (err) {
 			console.log("Error while logging in: ", err);
+			setLoading(false);
 		}
 	};
 
@@ -149,8 +144,26 @@ function LoginFormContainer() {
 					font: "normal normal 16px/1.25 Lato,sans-serif",
 					boxShadow: "0 2px 4px rgb(0 0 0 / 10%)",
 					textTransform: "none",
+					opacity: loading ? 0.8 : 1,
 				}}>
-				Login
+				{loading ? (
+					<span className='circular_progress-container'>
+						<CircularProgress
+							disableShrink
+							sx={{
+								color: "#fff",
+								animationDuration: "1000ms",
+								// position: 'absolute',
+								left: 0,
+							}}
+							size={21}
+							thickness={4}
+						/>
+						Logging in...
+					</span>
+				) : (
+					<span>Login</span>
+				)}
 			</Button>
 
 			<div className='signup_link-container'>
