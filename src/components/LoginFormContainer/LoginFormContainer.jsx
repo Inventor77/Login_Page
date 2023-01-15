@@ -17,8 +17,29 @@ function LoginFormContainer() {
 	const [email, SetEmail] = useState();
 	const [password, setPassword] = useState();
 	const [showPassword, setShowPassword] = useState(false);
+	const [response, setResponse] = useState(null);
 
 	const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+	const handleSubmit = async () => {
+		try {
+			const res = await fetch(
+				"https://apptesting.docsumo.com/api/v1/eevee/login/",
+				{
+					method: "POST",
+					body: {
+						email: email,
+						password: password,
+					},
+				}
+			);
+			const data = await res.json();
+			await setResponse(data);
+			await console.log(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	return (
 		<div className='login_form-container'>
@@ -94,6 +115,7 @@ function LoginFormContainer() {
 			</div>
 
 			<Button
+				onClick={handleSubmit}
 				variant='contained'
 				sx={{
 					marginTop: "32px",
