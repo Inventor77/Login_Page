@@ -3,7 +3,6 @@ import "./Login.scss";
 import Logo from "../../components/Logo/Logo";
 import LoginFormContainer from "../../components/LoginFormContainer/LoginFormContainer";
 
-
 function Login() {
 	return (
 		<div className='login_page'>
@@ -11,7 +10,7 @@ function Login() {
 				<div className='logo-container'>
 					<Logo />
 				</div>
-					<LoginFormContainer />
+				<LoginFormContainer />
 			</div>
 		</div>
 	);
