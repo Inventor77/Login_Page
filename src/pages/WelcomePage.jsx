@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import Welcome from "../layouts/Welcome/Welcome";
 
 function WelcomePage() {
-  return (
-    <div>WelcomePage</div>
-  )
+	return <Welcome />;
 }
 
-export default WelcomePage
+export default WelcomePage;

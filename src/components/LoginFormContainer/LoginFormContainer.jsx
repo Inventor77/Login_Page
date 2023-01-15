@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import { useNavigate } from "react-router-dom";
 
 function LoginFormContainer() {
 	const [email, SetEmail] = useState("");
@@ -20,6 +21,7 @@ function LoginFormContainer() {
 	const [showPassword, setShowPassword] = useState(false);
 	const [response, setResponse] = useState(null);
 	const [loading, setLoading] = useState(false);
+	const navigate = useNavigate();
 
 	const handleClickShowPassword = () => setShowPassword((show) => !show);
 
@@ -44,6 +46,7 @@ function LoginFormContainer() {
 			const data = await res.json();
 			setResponse(data);
 			setLoading(false);
+			if (!data?.error) navigate("/welcome", { state: data });
 		} catch (err) {
 			console.log("Error while logging in: ", err);
 			setLoading(false);

@@ -1,0 +1,12 @@
+.welcome_page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #190D2E;
+    pre {
+        font-size: 18px;
+        font-weight: 700;
+        color: #ffffff;
+    }
+}
