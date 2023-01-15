@@ -1,6 +1,8 @@
 import './App.scss';
 import LoginPage from './pages/LoginPage';
+import WelcomePage from './pages/WelcomePage';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const theme = createTheme({
 	palette: {
@@ -11,12 +13,17 @@ const theme = createTheme({
 });
 
 function App() {
-  return (
-		<ThemeProvider theme={theme}>
-			<div className='App'>
-				<LoginPage />
-			</div>
-		</ThemeProvider>
+	return (
+		<Router>
+			<ThemeProvider theme={theme}>
+				<div className='App'>
+					<Routes>
+						<Route path='/' element={<LoginPage />} />
+						<Route path='/welcome' element={<WelcomePage />} />
+					</Routes>
+				</div>
+			</ThemeProvider>
+		</Router>
 	);
 }
 
