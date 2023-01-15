@@ -14,6 +14,8 @@ import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 function LoginFormContainer() {
+	const [email, SetEmail] = useState();
+	const [password, setPassword] = useState();
 	const [showPassword, setShowPassword] = useState(false);
 
 	const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -47,6 +49,8 @@ function LoginFormContainer() {
 						id='textarea'
 						placeholder='janedoe@abc.com'
 						size='small'
+						value={email}
+						onChange={(e) => SetEmail(e.target.value)}
 					/>
 				</FormControl>
 			</div>
@@ -67,10 +71,7 @@ function LoginFormContainer() {
 						type={showPassword ? "text" : "password"}
 						endAdornment={
 							<InputAdornment position='end'>
-								<IconButton
-									size='small'
-									onClick={handleClickShowPassword}
-									edge='end'>
+								<IconButton onClick={handleClickShowPassword} edge='end'>
 									{showPassword ? (
 										<VisibilityOutlinedIcon
 											sx={{ fontSize: "21px", color: "#000" }}
@@ -83,6 +84,8 @@ function LoginFormContainer() {
 								</IconButton>
 							</InputAdornment>
 						}
+						value={password}
+						onChange={(e) => setPassword(e.target.value)}
 					/>
 				</FormControl>
 			</div>
